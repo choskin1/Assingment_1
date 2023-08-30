@@ -68,7 +68,8 @@
 </head>
 <body>
 <div class="container">
-    <h1>Welcome, {{ session['user'] }}</h1>
+    <h1>Welcome, {{ current_user.username }}</h1>
+
 
     <!-- Display flashed messages -->
     {% with messages = get_flashed_messages(with_categories=true) %}

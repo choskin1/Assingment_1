@@ -110,9 +110,11 @@ def create_group():
         return redirect(url_for('dashboard'))
     else:
         new_group = StudyGroup(name=group_name)
+        new_group.members.append(current_user)  # Use new_group here
         db.session.add(new_group)
         db.session.commit()
         return redirect(url_for('dashboard'))
+
 
 
 @app.route('/join_group', methods=['POST'])
