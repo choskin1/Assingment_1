@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Study Groups</title>
+</head>
+<body>
+<h1>Study Groups and Their Members</h1>
+<ul>
+    {% for group in studygroups %}
+    <li>
+        <strong>{{ group.name }}</strong>
+        <ul>
+            {% for member in group.members %}
+            <li>{{ member.username }}</li>
+            {% endfor %}
+        </ul>
+    </li>
+    {% endfor %}
+</ul>
+<a href="/dashboard">Back to Dashboard</a>
+</body>
+</html>
