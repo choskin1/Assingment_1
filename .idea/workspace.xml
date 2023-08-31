@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0f06667e-9368-4796-b96e-1de8ad7d840a" name="Changes" comment="Fixed user name display in dashboard and added functionality for a user when creating a group they automatically become apart of it">
+    <list default="true" id="0f06667e-9368-4796-b96e-1de8ad7d840a" name="Changes" comment="Added the basic vagrant file and other unversioned files. Starting the deployment of vms using the applicaiton code i have previuosly developed">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vagrantfile" beforeDir="false" afterPath="$PROJECT_DIR$/Vagrantfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app1.py" beforeDir="false" afterPath="$PROJECT_DIR$/app1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/session.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/session.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,7 +88,9 @@
       <option name="presentableId" value="Default" />
       <updated>1692755529144</updated>
       <workItem from="1692755530352" duration="12339000" />
-      <workItem from="1693427648772" duration="1501000" />
+      <workItem from="1693427648772" duration="2174000" />
+      <workItem from="1693435799474" duration="67000" />
+      <workItem from="1693435942476" duration="857000" />
     </task>
     <task id="LOCAL-00001" summary="uopdating repo to be in inline with my local files">
       <created>1693428242410</created>
@@ -101,7 +106,14 @@
       <option name="project" value="LOCAL" />
       <updated>1693428887112</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Added the basic vagrant file and other unversioned files. Starting the deployment of vms using the applicaiton code i have previuosly developed">
+      <created>1693434885511</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1693434885511</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -133,7 +145,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="uopdating repo to be in inline with my local files" />
     <MESSAGE value="Fixed user name display in dashboard and added functionality for a user when creating a group they automatically become apart of it" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed user name display in dashboard and added functionality for a user when creating a group they automatically become apart of it" />
+    <MESSAGE value="Added the basic vagrant file and other unversioned files. Starting the deployment of vms using the applicaiton code i have previuosly developed" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added the basic vagrant file and other unversioned files. Starting the deployment of vms using the applicaiton code i have previuosly developed" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/COSC349_Assingment_1$test.coverage" NAME="test Coverage Results" MODIFIED="1692931672441" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />

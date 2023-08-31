@@ -152,6 +152,10 @@ def leave_group():
         flash('Group not found!', 'error')
         return redirect(url_for('dashboard'))
 
+@app.route('/session/<group_id>')
+def session(group_id):
+    return render_template('session.html', group_id=group_id)
+
 
 @app.route('/view_users')
 @login_required
