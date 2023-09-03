@@ -1,8 +1,8 @@
-from flask import Flask, render_template, request, redirect, url_for, session
+from flask import Flask, render_template, request, redirect, url_for, session, flash
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from flask_login import LoginManager, UserMixin, login_user, logout_user, login_required, current_user
-from flask import flash
+
 app = Flask(__name__)
 
 login_manager = LoginManager()
@@ -23,6 +23,32 @@ def load_user(user_id):
 
 
 
+user_studygroup = db.Table('user_studygroup',
+                           db.Column('user_id', db.Integer, db.ForeignKey('User.id'), primary_key=True),
+                           db.Column('studygroup_id', db.Integer, db.ForeignKey('StudyGroup.id'), primary_key=True)
+                           )
+# User Model
+class User(db.Model, UserMixin):
+    __tablename__ = 'User'
+    id = db.Column(db.Integer, primary_key=True)
+    username = db.Column(db.String(80), unique=True, nullable=False)
+    email = db.Column(db.String(120), unique=True, nullable=False)
+    password = db.Column(db.String(120), nullable=False)
+
+    studygroups = db.relationship('StudyGroup', secondary='user_studygroup', back_populates='members')
+
+class StudyGroup(db.Model):
+    __tablename__ = 'StudyGroup'
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(80), unique=True, nullable=False)
+
+    members = db.relationship('User', secondary='user_studygroup', back_populates='studygroups')
+
+
+
+
+
+
 @app.route('/')
 def index():
     return render_template('login.html')
@@ -36,8 +62,8 @@ def register():
         email = request.form['email']
         password = request.form['password']
 
-        user_by_username = user.query.filter_by(username=username).first()
-        user_by_email = user.query.filter_by(email=email).first()
+        user_by_username = User.query.filter_by(username=username).first()
+        user_by_email = User.query.filter_by(email=email).first()
 
         if user_by_username:
             error = "Username already exists."
@@ -98,7 +124,6 @@ def create_group():
         return redirect(url_for('dashboard'))
 
 
-
 @app.route('/join_group', methods=['POST'])
 @login_required
 def join_group():
@@ -133,6 +158,7 @@ def leave_group():
     else:
         flash('Group not found!', 'error')
         return redirect(url_for('dashboard'))
+
 
 @app.route('/session/<group_id>')
 def session(group_id):

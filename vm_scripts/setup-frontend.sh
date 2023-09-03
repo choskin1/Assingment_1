@@ -10,9 +10,8 @@ pip3 install pymysql
 # Install Flask and other necessary Python packages
 pip3 install Flask flask_sqlalchemy flask_migrate flask_login
 
-cd /vagrant/app
+cd /vagrant
 
-export FLASK_APP=main_app:app
 sudo python3 main_app.py
 
 

@@ -4,10 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0f06667e-9368-4796-b96e-1de8ad7d840a" name="Changes" comment="changed the data base configution to mysql">
+    <list default="true" id="0f06667e-9368-4796-b96e-1de8ad7d840a" name="Changes" comment="minor changes to connect backend, setting up approiopate passwords for root user and appuser">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vagrant/machines/frontend/virtualbox/action_provision" beforeDir="false" afterPath="$PROJECT_DIR$/.vagrant/machines/frontend/virtualbox/action_provision" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vagrant/machines/frontend/virtualbox/action_set_name" beforeDir="false" afterPath="$PROJECT_DIR$/.vagrant/machines/frontend/virtualbox/action_set_name" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vagrant/machines/frontend/virtualbox/id" beforeDir="false" afterPath="$PROJECT_DIR$/.vagrant/machines/frontend/virtualbox/id" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vagrant/machines/frontend/virtualbox/index_uuid" beforeDir="false" afterPath="$PROJECT_DIR$/.vagrant/machines/frontend/virtualbox/index_uuid" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vagrant/machines/frontend/virtualbox/private_key" beforeDir="false" afterPath="$PROJECT_DIR$/.vagrant/machines/frontend/virtualbox/private_key" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vagrantfile" beforeDir="false" afterPath="$PROJECT_DIR$/Vagrantfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main_app.py" beforeDir="false" afterPath="$PROJECT_DIR$/main_app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mywebsite.conf" beforeDir="false" afterPath="$PROJECT_DIR$/mywebsite.conf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vm_scripts/setup-backend.sh" beforeDir="false" afterPath="$PROJECT_DIR$/vm_scripts/setup-backend.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vm_scripts/setup-frontend.sh" beforeDir="false" afterPath="$PROJECT_DIR$/vm_scripts/setup-frontend.sh" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,7 +114,7 @@
       <workItem from="1693427648772" duration="2174000" />
       <workItem from="1693435799474" duration="67000" />
       <workItem from="1693435942476" duration="3925000" />
-      <workItem from="1693538200650" duration="7900000" />
+      <workItem from="1693538200650" duration="13349000" />
     </task>
     <task id="LOCAL-00001" summary="uopdating repo to be in inline with my local files">
       <created>1693428242410</created>
@@ -178,7 +186,14 @@
       <option name="project" value="LOCAL" />
       <updated>1693777393009</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="minor changes to connect backend, setting up approiopate passwords for root user and appuser">
+      <created>1693779347955</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1693779347955</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -218,7 +233,8 @@
     <MESSAGE value="debugging front end" />
     <MESSAGE value="figrured out the port forwarding problem" />
     <MESSAGE value="changed the data base configution to mysql" />
-    <option name="LAST_COMMIT_MESSAGE" value="changed the data base configution to mysql" />
+    <MESSAGE value="minor changes to connect backend, setting up approiopate passwords for root user and appuser" />
+    <option name="LAST_COMMIT_MESSAGE" value="minor changes to connect backend, setting up approiopate passwords for root user and appuser" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/COSC349_Assingment_1$test.coverage" NAME="test Coverage Results" MODIFIED="1692931672441" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
