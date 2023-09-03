@@ -9,6 +9,13 @@ apt-get install -y python3 python3-pip
 # Install Flask and other necessary Python packages
 pip3 install Flask flask_sqlalchemy flask_migrate flask_login
 
+cd /vagrant/app
+
+export FLASK_APP=main_app:app
+sudo python3 main_app.py
+
+
+
 
 pip3 install -r /vagrant/requirements.txt
 
