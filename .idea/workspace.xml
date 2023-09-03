@@ -4,21 +4,32 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0f06667e-9368-4796-b96e-1de8ad7d840a" name="Changes" comment="started the initial front end start up script">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/myapp.wsgi" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mywebsite.conf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/setup-database.sql" afterDir="false" />
+    <list default="true" id="0f06667e-9368-4796-b96e-1de8ad7d840a" name="Changes" comment="debugging front end">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/COSC349 Assingment 1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/COSC349 Assingment 1.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vagrant/machines/backend/virtualbox/action_provision" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vagrant/machines/backend/virtualbox/action_set_name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vagrant/machines/backend/virtualbox/box_meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vagrant/machines/backend/virtualbox/creator_uid" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vagrant/machines/backend/virtualbox/id" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vagrant/machines/backend/virtualbox/index_uuid" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vagrant/machines/backend/virtualbox/private_key" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vagrant/machines/backend/virtualbox/synced_folders" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vagrant/machines/backend/virtualbox/vagrant_cwd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vagrant/machines/frontend/virtualbox/action_provision" beforeDir="false" afterPath="$PROJECT_DIR$/.vagrant/machines/frontend/virtualbox/action_provision" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vagrant/machines/frontend/virtualbox/action_set_name" beforeDir="false" afterPath="$PROJECT_DIR$/.vagrant/machines/frontend/virtualbox/action_set_name" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vagrant/machines/frontend/virtualbox/id" beforeDir="false" afterPath="$PROJECT_DIR$/.vagrant/machines/frontend/virtualbox/id" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vagrant/machines/frontend/virtualbox/index_uuid" beforeDir="false" afterPath="$PROJECT_DIR$/.vagrant/machines/frontend/virtualbox/index_uuid" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vagrant/machines/frontend/virtualbox/private_key" beforeDir="false" afterPath="$PROJECT_DIR$/.vagrant/machines/frontend/virtualbox/private_key" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vagrant/machines/media/virtualbox/action_provision" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vagrant/machines/media/virtualbox/action_set_name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vagrant/machines/media/virtualbox/box_meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vagrant/machines/media/virtualbox/creator_uid" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vagrant/machines/media/virtualbox/id" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vagrant/machines/media/virtualbox/index_uuid" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vagrant/machines/media/virtualbox/private_key" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vagrant/machines/media/virtualbox/synced_folders" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vagrant/machines/media/virtualbox/vagrant_cwd" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Vagrantfile" beforeDir="false" afterPath="$PROJECT_DIR$/Vagrantfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app1.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/setup-backend.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/setup-frontend.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/setup-media.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,6 +58,9 @@
         <option name="url" value="https://github.com/choskin1/Assingment_1.git" />
       </UrlAndAccount>
     </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2UMhnrGefVBNbFX6IBQcGKz11Vw" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -114,7 +128,7 @@
       <workItem from="1693427648772" duration="2174000" />
       <workItem from="1693435799474" duration="67000" />
       <workItem from="1693435942476" duration="3925000" />
-      <workItem from="1693538200650" duration="3403000" />
+      <workItem from="1693538200650" duration="5449000" />
     </task>
     <task id="LOCAL-00001" summary="uopdating repo to be in inline with my local files">
       <created>1693428242410</created>
@@ -158,7 +172,21 @@
       <option name="project" value="LOCAL" />
       <updated>1693444349833</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="bug fixes in many places, moved from using apache and flash to just flask as i think it will suffice for this assingment and this project is not intended for production">
+      <created>1693774542975</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1693774542976</updated>
+    </task>
+    <task id="LOCAL-00008" summary="debugging front end">
+      <created>1693776262306</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1693776262306</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -194,7 +222,9 @@
     <MESSAGE value="Main changes to vargant file, setting up three vms on the network address 192.168.56.2," />
     <MESSAGE value="Added empty start up scripts for each vm so i can begin the provisioning process" />
     <MESSAGE value="started the initial front end start up script" />
-    <option name="LAST_COMMIT_MESSAGE" value="started the initial front end start up script" />
+    <MESSAGE value="bug fixes in many places, moved from using apache and flash to just flask as i think it will suffice for this assingment and this project is not intended for production" />
+    <MESSAGE value="debugging front end" />
+    <option name="LAST_COMMIT_MESSAGE" value="debugging front end" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/COSC349_Assingment_1$test.coverage" NAME="test Coverage Results" MODIFIED="1692931672441" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />

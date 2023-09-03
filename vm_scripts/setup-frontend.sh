@@ -17,6 +17,3 @@ sudo python3 main_app.py
 
 
 
-pip3 install -r /vagrant/requirements.txt
-
-
