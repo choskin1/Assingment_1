@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0f06667e-9368-4796-b96e-1de8ad7d840a" name="Changes" comment="figrured out the port forwarding problem" />
+    <list default="true" id="0f06667e-9368-4796-b96e-1de8ad7d840a" name="Changes" comment="changed the data base configution to mysql">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_app.py" beforeDir="false" afterPath="$PROJECT_DIR$/main_app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vm_scripts/setup-backend.sh" beforeDir="false" afterPath="$PROJECT_DIR$/vm_scripts/setup-backend.sh" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -102,7 +106,7 @@
       <workItem from="1693427648772" duration="2174000" />
       <workItem from="1693435799474" duration="67000" />
       <workItem from="1693435942476" duration="3925000" />
-      <workItem from="1693538200650" duration="5749000" />
+      <workItem from="1693538200650" duration="7900000" />
     </task>
     <task id="LOCAL-00001" summary="uopdating repo to be in inline with my local files">
       <created>1693428242410</created>
@@ -167,7 +171,14 @@
       <option name="project" value="LOCAL" />
       <updated>1693776933066</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="changed the data base configution to mysql">
+      <created>1693777393009</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1693777393009</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -206,7 +217,8 @@
     <MESSAGE value="bug fixes in many places, moved from using apache and flash to just flask as i think it will suffice for this assingment and this project is not intended for production" />
     <MESSAGE value="debugging front end" />
     <MESSAGE value="figrured out the port forwarding problem" />
-    <option name="LAST_COMMIT_MESSAGE" value="figrured out the port forwarding problem" />
+    <MESSAGE value="changed the data base configution to mysql" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed the data base configution to mysql" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/COSC349_Assingment_1$test.coverage" NAME="test Coverage Results" MODIFIED="1692931672441" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />

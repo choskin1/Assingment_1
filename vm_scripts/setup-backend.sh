@@ -4,7 +4,7 @@
 apt-get update
 
 # Set MySQL root password
-export MYSQL_PWD='insecure_mysqlroot_pw'
+export MYSQL_PWD='root'
 
 # Pre-configure password for MySQL installation
 echo "mysql-server mysql-server/root_password password $MYSQL_PWD" | debconf-set-selections
@@ -16,11 +16,10 @@ service mysql start
 
 # Database setup
 echo "CREATE DATABASE myappdb;" | mysql
-echo "CREATE USER 'appuser'@'%' IDENTIFIED BY 'insecure_db_pw';" | mysql
+echo "CREATE USER 'appuser'@'%' IDENTIFIED BY 'connor';" | mysql
 echo "GRANT ALL PRIVILEGES ON myappdb.* TO 'appuser'@'%';" | mysql
 
 # Set password for database operations
-export MYSQL_PWD='insecure_db_pw'
 cat /vagrant/setup-database.sql | mysql -u appuser myappdb
 
 # Configure MySQL to accept external connections

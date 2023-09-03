@@ -9,7 +9,7 @@ login_manager = LoginManager()
 login_manager.init_app(app)
 login_manager.login_view = "login"
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://appuser:insecure_db_pw@192.168.56.22/myappdb'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://appuser:connor@192.168.56.22/myappdb'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.secret_key = 'some_secret_key'
 
@@ -21,24 +21,6 @@ migrate = Migrate(app, db)
 def load_user(user_id):
     return User.query.get(int(user_id))
 
-
-class User(db.Model, UserMixin):
-    id = db.Column(db.Integer, primary_key=True)
-    username = db.Column(db.String(80), unique=True, nullable=False)
-    email = db.Column(db.String(120), unique=True, nullable=False)
-    password = db.Column(db.String(120), nullable=False)
-
-
-user_studygroup = db.Table('user_studygroup',
-                           db.Column('user_id', db.Integer, db.ForeignKey('user.id')),
-                           db.Column('studygroup_id', db.Integer, db.ForeignKey('study_group.id'))
-                           )
-
-
-class StudyGroup(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(80), unique=True, nullable=False)
-    members = db.relationship('User', secondary=user_studygroup, backref=db.backref('studygroups', lazy='dynamic'))
 
 
 @app.route('/')
@@ -54,8 +36,8 @@ def register():
         email = request.form['email']
         password = request.form['password']
 
-        user_by_username = User.query.filter_by(username=username).first()
-        user_by_email = User.query.filter_by(email=email).first()
+        user_by_username = user.query.filter_by(username=username).first()
+        user_by_email = user.query.filter_by(email=email).first()
 
         if user_by_username:
             error = "Username already exists."
