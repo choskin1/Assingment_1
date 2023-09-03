@@ -4,33 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0f06667e-9368-4796-b96e-1de8ad7d840a" name="Changes" comment="debugging front end">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vagrant/machines/backend/virtualbox/action_provision" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vagrant/machines/backend/virtualbox/action_set_name" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vagrant/machines/backend/virtualbox/box_meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vagrant/machines/backend/virtualbox/creator_uid" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vagrant/machines/backend/virtualbox/id" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vagrant/machines/backend/virtualbox/index_uuid" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vagrant/machines/backend/virtualbox/private_key" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vagrant/machines/backend/virtualbox/synced_folders" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vagrant/machines/backend/virtualbox/vagrant_cwd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vagrant/machines/frontend/virtualbox/action_provision" beforeDir="false" afterPath="$PROJECT_DIR$/.vagrant/machines/frontend/virtualbox/action_provision" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vagrant/machines/frontend/virtualbox/action_set_name" beforeDir="false" afterPath="$PROJECT_DIR$/.vagrant/machines/frontend/virtualbox/action_set_name" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vagrant/machines/frontend/virtualbox/id" beforeDir="false" afterPath="$PROJECT_DIR$/.vagrant/machines/frontend/virtualbox/id" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vagrant/machines/frontend/virtualbox/index_uuid" beforeDir="false" afterPath="$PROJECT_DIR$/.vagrant/machines/frontend/virtualbox/index_uuid" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vagrant/machines/frontend/virtualbox/private_key" beforeDir="false" afterPath="$PROJECT_DIR$/.vagrant/machines/frontend/virtualbox/private_key" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vagrant/machines/media/virtualbox/action_provision" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vagrant/machines/media/virtualbox/action_set_name" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vagrant/machines/media/virtualbox/box_meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vagrant/machines/media/virtualbox/creator_uid" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vagrant/machines/media/virtualbox/id" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vagrant/machines/media/virtualbox/index_uuid" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vagrant/machines/media/virtualbox/private_key" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vagrant/machines/media/virtualbox/synced_folders" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vagrant/machines/media/virtualbox/vagrant_cwd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vagrantfile" beforeDir="false" afterPath="$PROJECT_DIR$/Vagrantfile" afterDir="false" />
-    </list>
+    <list default="true" id="0f06667e-9368-4796-b96e-1de8ad7d840a" name="Changes" comment="figrured out the port forwarding problem" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -128,7 +102,7 @@
       <workItem from="1693427648772" duration="2174000" />
       <workItem from="1693435799474" duration="67000" />
       <workItem from="1693435942476" duration="3925000" />
-      <workItem from="1693538200650" duration="5449000" />
+      <workItem from="1693538200650" duration="5749000" />
     </task>
     <task id="LOCAL-00001" summary="uopdating repo to be in inline with my local files">
       <created>1693428242410</created>
@@ -186,7 +160,14 @@
       <option name="project" value="LOCAL" />
       <updated>1693776262306</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="figrured out the port forwarding problem">
+      <created>1693776933066</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1693776933066</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -224,7 +205,8 @@
     <MESSAGE value="started the initial front end start up script" />
     <MESSAGE value="bug fixes in many places, moved from using apache and flash to just flask as i think it will suffice for this assingment and this project is not intended for production" />
     <MESSAGE value="debugging front end" />
-    <option name="LAST_COMMIT_MESSAGE" value="debugging front end" />
+    <MESSAGE value="figrured out the port forwarding problem" />
+    <option name="LAST_COMMIT_MESSAGE" value="figrured out the port forwarding problem" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/COSC349_Assingment_1$test.coverage" NAME="test Coverage Results" MODIFIED="1692931672441" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
