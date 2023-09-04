@@ -11,6 +11,7 @@ login_manager.init_app(app)
 login_manager.login_view = "login"
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://appuser:connor@192.168.56.22/myappdb'
+
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.secret_key = 'some_secret_key'
 
@@ -47,50 +48,28 @@ class StudyGroup(db.Model):
 
     members = db.relationship('User', secondary='user_studygroup', back_populates='studygroups')
 
+class Group(db.Model):
+    __tablename__ = 'groups'
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(255), nullable=False)
+    description = db.Column(db.Text)
+
+    files = db.relationship('File', back_populates='group')
+
+class File(db.Model):
+    __tablename__ = 'files'
+
+    id = db.Column(db.Integer, primary_key=True)
+    group_id = db.Column(db.Integer, db.ForeignKey('groups.id'))
+    filename = db.Column(db.String(255), nullable=False)
+    filepath = db.Column(db.Text, nullable=False)
+    group = db.relationship('Group', back_populates='files')
+
 
 @app.route('/')
 def index():
     return render_template('login.html')
 
-
-def send_meeting_request_to_media_vm(group):
-    media_vm_ip = "192.168.56.23"  # Replace with your media VM's IP
-    url = f"http://{media_vm_ip}:8080/start_meeting"
-
-    # You might need to send some data or authentication headers
-    data = {
-        'group_id': group,
-    }
-
-    response = requests.post(url, data=data)
-    return response
-
-
-@app.route('/host_meeting/<int:group_id>', methods=['GET'])
-@login_required
-def host_meeting(group_id):
-    # Get the group details using the group_id
-    group = StudyGroup.query.get(group_id)
-    meeting_url = f"https://media-server.example.com/group-{group_id}"
-    # Render the meeting hosting template with the group details
-    return render_template('host_meeting.html', group=group)
-
-
-@app.route('/start_meeting/<int:group_id>', methods=['POST'])
-@login_required
-def start_meeting(group_id):
-    # Start the meeting and perform necessary actions
-    group = StudyGroup.query.get(group_id)
-    response = send_meeting_request_to_media_vm(group_id)
-
-    if response.status_code == 200:
-        flash("Meeting started successfully", "success")
-    else:
-        flash("Failed to start meeting", "error")
-
-
-    # Redirect to the meeting hosting page
-    return redirect(url_for('host_meeting', group_id=group_id))
 
 
 @app.route('/register', methods=['GET', 'POST'])

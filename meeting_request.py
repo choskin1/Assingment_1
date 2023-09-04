@@ -4,13 +4,14 @@ import requests
 app = Flask(__name__)
 
 # Jitsi API configuration
-JITSI_SERVER = "http://192.168.56.23"  # Replace with your Jitsi server URL
+JITSI_SERVER = "http://media-server"  # Replace with your Jitsi server URL
 JITSI_API_TOKEN = "your-api-token"  # Replace with your Jitsi API token
 
 @app.route('/start_meeting', methods=['POST'])
 def start_meeting():
     group_id = request.form.get('group_id')
-
+    print(group_id)
+    print("hellooooooo")
     # Generate a unique meeting room name based on the group ID
     room_name = f"group-{group_id}"
 

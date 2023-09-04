@@ -1,23 +1,44 @@
 #!/bin/bash
 
-sudo apt update && sudo apt upgrade -y
+# Update Ubuntu software packages.
+apt-get update
 
-sudo apt install prosody
+# Set MySQL root password and app user password
+MYSQL_ROOT_PWD='root123'
+APP_USER_PWD='connor'
 
-## Update Ubuntu software packages.
-#sudo apt update
-#
-#
-##
-### Install Jitsi Meet
-#wget -qO - https://download.jitsi.org/jitsi-key.gpg.key | sudo apt-key add -
-#sudo sh -c "echo 'deb https://download.jitsi.org stable/' > /etc/apt/sources.list.d/jitsi-stable.list"
-#sudo apt update
+# Pre-configure password for MySQL installation
+echo "mysql-server mysql-server/root_password password $MYSQL_ROOT_PWD" | debconf-set-selections
+echo "mysql-server mysql-server/root_password_again password $MYSQL_ROOT_PWD" | debconf-set-selections
 
-#apt-get update
-#apt-get -y install jitsi-meet
-#
-#apt-get install -y python3 python3-pip
-#pip3 install Flask flask_sqlalchemy flask_migrate flask_login
-#cd /vagrant
-#python3 meeting_requests.py
+# Install MySQL server
+apt-get -y install mysql-server
+service mysql start
+
+# Database setup for StudyGroupDB
+echo "CREATE DATABASE StudyGroupDB;" | mysql -u root -p$MYSQL_ROOT_PWD
+echo "CREATE USER 'mediauser'@'%' IDENTIFIED BY '$APP_USER_PWD';" | mysql -u root -p$MYSQL_ROOT_PWD
+echo "GRANT ALL PRIVILEGES ON StudyGroupDB.* TO 'mediauser'@'%';" | mysql -u root -p$MYSQL_ROOT_PWD
+
+# Create tables for study groups and files
+mysql -u mediauser -p$APP_USER_PWD StudyGroupDB <<EOF
+CREATE TABLE study_group_files (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    description TEXT
+);
+
+CREATE TABLE files (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    study_group_files INT,
+    filename VARCHAR(255) NOT NULL,
+    filepath TEXT NOT NULL,
+    FOREIGN KEY (study_group_files) REFERENCES study_group_files(id)
+);
+EOF
+
+# Configure MySQL to accept external connections
+sed -i'' -e '/bind-address/s/127.0.0.1/0.0.0.0/' /etc/mysql/mysql.conf.d/mysqld.cnf
+
+# Restart MySQL to apply changes
+service mysql restart

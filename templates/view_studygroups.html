@@ -90,9 +90,12 @@
                         {% endfor %}
                     </ul>
                 </div>
-                <form action="{{ url_for('start_meeting', group_id=group.id) }}" method="post">
-                    <button class="start-meeting-btn" type="submit">Start Meeting</button>
+                <form action="/uploadfile/<group_id>" method="post" enctype="multipart/form-data">
+                    Select document to upload:
+                    <input type="file" name="file" id="file">
+                    <input type="submit" value="Upload Document" name="submit">
                 </form>
+
             </div>
         {% endif %}
     {% endfor %}
