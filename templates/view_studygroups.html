@@ -1,22 +1,107 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Study Groups</title>
+    <title>View Study Groups</title>
+    <style>
+        /* Your existing style definitions here */
+
+        /* Additional styles for the view_studygroups page */
+        .study-group {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column; /* Change flex direction to column */
+            align-items: center; /* Center align items horizontally */
+        }
+
+        .study-group-header {
+            font-size: 18px;
+            font-weight: bold;
+            color: #0055A2;
+            margin-bottom: 10px;
+        }
+
+        .members-list {
+            list-style-type: none;
+            padding: 0;
+            margin: 10px 0;
+            text-align: left; /* Align members' list to the left */
+            margin-left: 0; /* Reset margin for members' list */
+        }
+
+        .members-list-item {
+            padding: 5px;
+        }
+
+        .start-meeting-btn {
+            background-color: #0055A2; /* Otago Blue */
+            color: #ffffff;
+            cursor: pointer;
+            border: none;
+            margin-top: 10px;
+            padding: 10px 20px; /* Increase padding */
+            font-size: 16px; /* Increase font size */
+            border-radius: 3px;
+            width: 100%; /* Button spans full width */
+        }
+
+        .start-meeting-btn:hover {
+            background-color: #003366; /* Darker Blue */
+        }
+
+        .blue-button {
+            /* Styles for the blue buttons */
+            background-color: #0055A2; /* Otago Blue */
+            color: #ffffff;
+            cursor: pointer;
+            border: none;
+            padding: 10px 20px;
+            text-decoration: none; /* Remove underline */
+            display: inline-block;
+            margin-top: 10px;
+            border-radius: 3px;
+            text-align: center;
+        }
+
+        .blue-button:hover {
+            background-color: #003366; /* Darker Blue */
+        }
+    </style>
 </head>
 <body>
-<h1>Study Groups and Their Members</h1>
-<ul>
+<div class="container">
+    <h1>Your Study Groups</h1>
+
+    <!-- Display flashed messages -->
+    <!-- Your existing flashed messages code here -->
+
+    <h2>Study Groups</h2>
     {% for group in studygroups %}
-    <li>
-        <strong>{{ group.name }}</strong>
-        <ul>
-            {% for member in group.members %}
-            <li>{{ member.username }}</li>
-            {% endfor %}
-        </ul>
-    </li>
+        {% if current_user in group.members %}
+            <div class="study-group">
+                <div class="study-group-header">{{ group.name }}</div>
+                <div class="members-list">
+                    <ul>
+                        {% for member in group.members %}
+                            <li class="members-list-item">{{ member.username }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <form action="{{ url_for('start_meeting', group_id=group.id) }}" method="post">
+                    <button class="start-meeting-btn" type="submit">Start Meeting</button>
+                </form>
+            </div>
+        {% endif %}
     {% endfor %}
-</ul>
-<a href="/dashboard">Back to Dashboard</a>
+
+    <!-- Back to Dashboard link -->
+    <h2><a class="blue-button" href="/dashboard">Back to Dashboard</a></h2>
+
+    <!-- Logout Section -->
+    <h2><a class="blue-button" href="/logout">Logout</a></h2>
+</div>
 </body>
 </html>

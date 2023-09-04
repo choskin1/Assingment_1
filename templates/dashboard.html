@@ -100,18 +100,7 @@
         <button type="submit">Leave</button>
     </form>
 
-    <h2>Your Study Groups</h2>
-    <ul>
-        {% for group in current_user.studygroups %}
-        <li>{{ group.name }} - Members:
-            <ul>
-                {% for member in group.members %}
-                <li>{{ member.username }}</li>
-                {% endfor %}
-            </ul>
-        </li>
-        {% endfor %}
-    </ul>
+
 
     <!-- Logout Section -->
     <h2><a href="/view_studygroups">View Study Groups</a></h2>

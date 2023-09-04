@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0f06667e-9368-4796-b96e-1de8ad7d840a" name="Changes" comment="minor changes to connect backend, setting up approiopate passwords for root user and appuser">
+    <list default="true" id="0f06667e-9368-4796-b96e-1de8ad7d840a" name="Changes" comment="fixed a few problems related to data base initailisation from provisioning script, front and and backend working now,">
+      <change afterPath="$PROJECT_DIR$/meeting_request.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/host_meeting.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.vagrant/machines/frontend/virtualbox/action_provision" beforeDir="false" afterPath="$PROJECT_DIR$/.vagrant/machines/frontend/virtualbox/action_provision" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.vagrant/machines/frontend/virtualbox/action_set_name" beforeDir="false" afterPath="$PROJECT_DIR$/.vagrant/machines/frontend/virtualbox/action_set_name" afterDir="false" />
@@ -13,9 +15,9 @@
       <change beforePath="$PROJECT_DIR$/.vagrant/machines/frontend/virtualbox/private_key" beforeDir="false" afterPath="$PROJECT_DIR$/.vagrant/machines/frontend/virtualbox/private_key" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Vagrantfile" beforeDir="false" afterPath="$PROJECT_DIR$/Vagrantfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main_app.py" beforeDir="false" afterPath="$PROJECT_DIR$/main_app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mywebsite.conf" beforeDir="false" afterPath="$PROJECT_DIR$/mywebsite.conf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vm_scripts/setup-backend.sh" beforeDir="false" afterPath="$PROJECT_DIR$/vm_scripts/setup-backend.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vm_scripts/setup-frontend.sh" beforeDir="false" afterPath="$PROJECT_DIR$/vm_scripts/setup-frontend.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dashboard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/view_studygroups.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/view_studygroups.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vm_scripts/setup-media.sh" beforeDir="false" afterPath="$PROJECT_DIR$/vm_scripts/setup-media.sh" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,7 +116,7 @@
       <workItem from="1693427648772" duration="2174000" />
       <workItem from="1693435799474" duration="67000" />
       <workItem from="1693435942476" duration="3925000" />
-      <workItem from="1693538200650" duration="13349000" />
+      <workItem from="1693538200650" duration="20656000" />
     </task>
     <task id="LOCAL-00001" summary="uopdating repo to be in inline with my local files">
       <created>1693428242410</created>
@@ -193,7 +195,14 @@
       <option name="project" value="LOCAL" />
       <updated>1693779347955</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="fixed a few problems related to data base initailisation from provisioning script, front and and backend working now,">
+      <created>1693785408968</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1693785408969</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -234,7 +243,8 @@
     <MESSAGE value="figrured out the port forwarding problem" />
     <MESSAGE value="changed the data base configution to mysql" />
     <MESSAGE value="minor changes to connect backend, setting up approiopate passwords for root user and appuser" />
-    <option name="LAST_COMMIT_MESSAGE" value="minor changes to connect backend, setting up approiopate passwords for root user and appuser" />
+    <MESSAGE value="fixed a few problems related to data base initailisation from provisioning script, front and and backend working now," />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed a few problems related to data base initailisation from provisioning script, front and and backend working now," />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/COSC349_Assingment_1$test.coverage" NAME="test Coverage Results" MODIFIED="1692931672441" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
