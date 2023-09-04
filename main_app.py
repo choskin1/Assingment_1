@@ -11,7 +11,6 @@ login_manager.init_app(app)
 login_manager.login_view = "login"
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://appuser:connor@192.168.56.22/myappdb'
-
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.secret_key = 'some_secret_key'
 
@@ -58,11 +57,11 @@ class Group(db.Model):
 
 class File(db.Model):
     __tablename__ = 'files'
-
     id = db.Column(db.Integer, primary_key=True)
     group_id = db.Column(db.Integer, db.ForeignKey('groups.id'))
     filename = db.Column(db.String(255), nullable=False)
     filepath = db.Column(db.Text, nullable=False)
+
     group = db.relationship('Group', back_populates='files')
 
 
@@ -71,6 +70,22 @@ def index():
     return render_template('login.html')
 
 
+def get_user_groups(user_id):
+
+    user = User.query.get(user_id)
+    if user:
+        return user.studygroups
+    return []
+@app.route('/view_files', methods=['GET'])
+@login_required
+def view_files():
+
+    files = [
+        {"filename": "document1.pdf", "filepath": "/path/to/document1.pdf"},
+        {"filename": "presentation.ppt", "filepath": "/path/to/presentation.ppt"},
+        {"filename": "notes.txt", "filepath": "/path/to/notes.txt"},
+    ]
+    return render_template('view_files.html', files=files)
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():

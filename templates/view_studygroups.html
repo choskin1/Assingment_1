@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>View Study Groups</title>
     <style>
-        /* Your existing style definitions here */
+
 
         /* Additional styles for the view_studygroups page */
         .study-group {
@@ -71,6 +72,7 @@
         }
     </style>
 </head>
+
 <body>
 <div class="container">
     <h1>Your Study Groups</h1>
@@ -90,11 +92,14 @@
                         {% endfor %}
                     </ul>
                 </div>
-                <form action="/uploadfile/<group_id>" method="post" enctype="multipart/form-data">
-                    Select document to upload:
-                    <input type="file" name="file" id="file">
-                    <input type="submit" value="Upload Document" name="submit">
+                <!-- Upload Form -->
+                <form action="http://192.168.56.23/studygroup/upload.html" method="post" enctype="multipart/form-data">
+                    <input type="hidden" name="group_id" value="{{ group.id }}">
+                    <input type="submit" value="Upload Document" name="submit" class="blue-button">
                 </form>
+                <!-- View Files link -->
+                <a class="blue-button" href="/view_files">View Files</a>
+                <a class="blue-button" href="/session/{{ group.id }}">Join Meeting</a>
 
             </div>
         {% endif %}
@@ -107,4 +112,5 @@
     <h2><a class="blue-button" href="/logout">Logout</a></h2>
 </div>
 </body>
+
 </html>

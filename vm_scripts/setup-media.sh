@@ -1,44 +1,28 @@
 #!/bin/bash
 
-# Update Ubuntu software packages.
-apt-get update
+# Update the package list
+sudo apt-get update -y
 
-# Set MySQL root password and app user password
-MYSQL_ROOT_PWD='root123'
-APP_USER_PWD='connor'
+# Install Apache
+sudo apt-get install -y apache2
 
-# Pre-configure password for MySQL installation
-echo "mysql-server mysql-server/root_password password $MYSQL_ROOT_PWD" | debconf-set-selections
-echo "mysql-server mysql-server/root_password_again password $MYSQL_ROOT_PWD" | debconf-set-selections
+# Install PHP and related packages
+sudo apt-get install -y php libapache2-mod-php php-mysql
 
-# Install MySQL server
-apt-get -y install mysql-server
-service mysql start
+# Restart Apache to activate changes
+sudo systemctl restart apache2
 
-# Database setup for StudyGroupDB
-echo "CREATE DATABASE StudyGroupDB;" | mysql -u root -p$MYSQL_ROOT_PWD
-echo "CREATE USER 'mediauser'@'%' IDENTIFIED BY '$APP_USER_PWD';" | mysql -u root -p$MYSQL_ROOT_PWD
-echo "GRANT ALL PRIVILEGES ON StudyGroupDB.* TO 'mediauser'@'%';" | mysql -u root -p$MYSQL_ROOT_PWD
+# Navigate to web root and create the 'studygroup' directory
+cd /var/www/html
+sudo mkdir -p studygroup
 
-# Create tables for study groups and files
-mysql -u mediauser -p$APP_USER_PWD StudyGroupDB <<EOF
-CREATE TABLE study_group_files (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(255) NOT NULL,
-    description TEXT
-);
+# Copy the required files into the 'studygroup' directory
+sudo cp /vagrant/upload.html /var/www/html/studygroup/
+sudo cp /vagrant/upload.php /var/www/html/studygroup/
 
-CREATE TABLE files (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    study_group_files INT,
-    filename VARCHAR(255) NOT NULL,
-    filepath TEXT NOT NULL,
-    FOREIGN KEY (study_group_files) REFERENCES study_group_files(id)
-);
-EOF
+# Create an 'uploads' directory inside 'studygroup'
+sudo mkdir -p /var/www/html/studygroup/uploads
 
-# Configure MySQL to accept external connections
-sed -i'' -e '/bind-address/s/127.0.0.1/0.0.0.0/' /etc/mysql/mysql.conf.d/mysqld.cnf
-
-# Restart MySQL to apply changes
-service mysql restart
+# Adjust the ownership and permissions of the 'studygroup' directory
+sudo chown -R www-data:www-data /var/www/html/studygroup
+sudo chmod -R 755 /var/www/html/studygroup
