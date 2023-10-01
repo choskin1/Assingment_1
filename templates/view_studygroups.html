@@ -92,11 +92,13 @@
                         {% endfor %}
                     </ul>
                 </div>
-                <!-- Upload Form -->
-                <form action="http://192.168.56.23/studygroup/upload.html" method="post" enctype="multipart/form-data">
-                    <input type="hidden" name="group_id" value="{{ group.id }}">
-                    <input type="submit" value="Upload Document" name="submit" class="blue-button">
-                </form>
+             	<!-- Upload Form -->
+		<form action="/upload_to_s3" method="post" enctype="multipart/form-data">
+   			<input type="hidden" name="group_id" value="{{ group.id }}">
+   			<input type="file" name="file"> <!-- File input field -->
+    			<input type="submit" value="Upload Document" name="submit" class="blue-button">
+		</form>
+
                 <!-- View Files link -->
                 <a class="blue-button" href="/view_files">View Files</a>
                 <a class="blue-button" href="/session/{{ group.id }}">Join Meeting</a>

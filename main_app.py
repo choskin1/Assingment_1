@@ -3,14 +3,15 @@ from flask import Flask, render_template, request, redirect, url_for, session, f
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from flask_login import LoginManager, UserMixin, login_user, logout_user, login_required, current_user
-
+import boto3
 app = Flask(__name__)
 
 login_manager = LoginManager()
 login_manager.init_app(app)
 login_manager.login_view = "login"
+s3 = boto3.client('s3', region_name='us-east-1')
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://admin:adminadmin@database-1.c0h8oostj5lp.us-east-1.rds.amazonaws.com/myappdb'
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://appuser:connor@192.168.56.22/myappdb'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.secret_key = 'some_secret_key'
 
@@ -86,6 +87,22 @@ def view_files():
         {"filename": "notes.txt", "filepath": "/path/to/notes.txt"},
     ]
     return render_template('view_files.html', files=files)
+
+@app.route('/upload_to_s3', methods=['POST'])
+@login_required
+def upload_to_s3():
+    if 'file' not in request.files:
+        flash('No file part')
+        return redirect(request.url)
+    file = request.files['file']
+    if file.filename == '':
+        flash('No selected file')
+        return redirect(request.url)
+    if file:
+        # Replace 'YOUR_BUCKET_NAME' with your S3 bucket's name
+        s3.upload_fileobj(file, 'study-group-media', file.filename)
+        flash('File successfully uploaded')
+        return redirect(url_for('dashboard'))
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
